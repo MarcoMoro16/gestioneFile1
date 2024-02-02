@@ -5,8 +5,7 @@ import java.io.IOException;
 
 /**
  *
- * @author MC
- * @ 12/01/23
+ * @author Moroni Marco
  */
 
 public class Lettore extends Thread{

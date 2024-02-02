@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author MC
- * @version 12/01/23
+ * @author Marco moroni
+ * @version 
  */
 
 public class Scrittore implements Runnable{
@@ -18,6 +18,12 @@ public class Scrittore implements Runnable{
     
     public Scrittore(String nomeFile){
         this.nomeFile = nomeFile;
+    }
+    
+    public Scrittore(String nomeFile, String username, String password) {
+    this.nomeFile = nomeFile;
+    this.username = username;
+    this.password = password;
     }
     
     @Override
@@ -35,7 +41,9 @@ public class Scrittore implements Runnable{
             br = new BufferedWriter(
                     new FileWriter(nomeFile));
             //2) scrivo nel buffer
-            br.write("File in output");
+            br.write("<" + username + ">");
+            br.write("\n\r");
+            br.write("<" + password + ">");
             br.write("\n\r");
             //3) svuoto il buffer e salvo nel file i dati
             br.flush();         
